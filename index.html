@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCIF Nepal – Supporting Children Initiative Foundation | Children's Home in Kathmandu</title>
+<meta name="description" content="SCIF is a small non-profit children's home in Kirtipur, Kathmandu caring for 15 children. Volunteer, sponsor or donate to help every child learn and thrive.">
+<meta property="og:image" content="https://volunteerworknepal.com/wp-content/uploads/2019/08/volunteer-work-nepal.jpg">
+<link rel="icon" href="https://volunteerworknepal.com/wp-content/uploads/2018/06/cropped-logo-website-scif-1-270x270.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>document.documentElement.classList.add('js');</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { primary:'#732014', secondary:'#D97B30', tertiary:'#004163', neutralBg:'#F9F6F1', darkText:'#111827' },
+  fontFamily: { sans:['Inter','sans-serif'], serif:['Playfair Display','serif'], body:['Plus Jakarta Sans','sans-serif'] },
+  screens: { 'xs':'480px','sm':'640px','md':'768px','lg':'1024px','xl':'1280px','2xl':'1536px' }
+}}}
+// shared image fallback
+window.FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#732014'/><stop offset='1' stop-color='#D97B30'/></linearGradient></defs><rect width='400' height='300' fill='url(#g)'/><path d='M200 205c-40-26-52-46-52-60 0-12 9-20 20-20 12 0 25 8 32 18 7-10 20-18 32-18 11 0 20 8 20 20 0 14-12 34-52 60z' fill='rgba(255,255,255,.55)'/></svg>");
+window.imgFail = function(i){ i.onerror = null; i.src = window.FALLBACK; };
+</script>
+<style>
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#2D2D2D;top:0!important}
+.font-serif-italic{font-family:'Lora',serif;font-style:italic}
+*:focus-visible{outline:3px solid #D97B30;outline-offset:2px}
+.focus-ring:focus-visible{outline:3px solid #D97B30;outline-offset:2px}
+img{max-width:100%}
+
+/* scroll progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#732014,#D97B30);z-index:300;transition:width .1s linear}
+header.scrolled{box-shadow:0 8px 24px -12px rgba(0,0,0,.25)}
+
+/* language toggle */
+.lang-toggle-container{display:flex;align-items:center;background:#f1f1f1;border-radius:30px;padding:3px;border:1px solid #e0e0e0;flex-shrink:0}
+.lang-btn{padding:6px 14px;font-size:12px;font-weight:700;border-radius:30px;background:transparent;border:none;cursor:pointer;transition:all .2s;color:#555;min-width:52px;white-space:nowrap;line-height:1.2;font-family:'Inter',sans-serif}
+.lang-btn.active{background:#732014;color:#fff;box-shadow:0 2px 6px rgba(115,32,20,.3)}
+.lang-btn:not(.active):hover{color:#732014;background:#f5f5f5}
+@media(max-width:640px){.lang-btn{padding:4px 10px;min-width:46px;font-size:11px}}
+.goog-te-banner-frame,#goog-gt-tt,.goog-te-gadget-icon,.goog-te-gadget-simple,.skiptranslate{display:none!important}
+
+/* mega menu */
+.mega-nav-group{position:relative}
+.mega-trigger svg{transition:transform .25s}
+.mega-trigger[aria-expanded="true"]{color:#732014}
+.mega-trigger[aria-expanded="true"] svg{transform:rotate(180deg)}
+.mega-panel{position:fixed;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;box-shadow:0 20px 40px -10px rgba(0,0,0,.15);z-index:200;border-radius:0 0 20px 20px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.mega-panel.active-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.mega-panel-inner{max-width:80rem;margin:0 auto;padding:2.5rem 2rem}
+.mega-panel li{opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s}
+.mega-panel.active-panel li{opacity:1;transform:none}
+.mega-panel.active-panel li:nth-child(2){transition-delay:.05s}.mega-panel.active-panel li:nth-child(3){transition-delay:.1s}
+.mega-panel.active-panel li:nth-child(4){transition-delay:.15s}.mega-panel.active-panel li:nth-child(5){transition-delay:.2s}.mega-panel.active-panel li:nth-child(6){transition-delay:.25s}
+@media(max-width:1023px){.mega-panel{display:none!important}
+ .header-grid{display:flex!important;justify-content:space-between;align-items:center;gap:.5rem}
+ .header-grid .logo-area{flex-shrink:1;min-width:0}
+ .header-grid .logo-area span.brand{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block;max-width:100%}
+ .right-controls{flex-shrink:0}}
+
+/* donate dropdown */
+#donateMenu{position:absolute;right:0;top:calc(100% + 10px);width:270px;background:#fff;border:1px solid #eee;border-radius:16px;box-shadow:0 20px 40px -10px rgba(0,0,0,.25);padding:8px;z-index:250;opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transform-origin:top right;transition:all .2s ease}
+#donateMenu.open{opacity:1;visibility:visible;transform:none}
+#donateMenu a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;font-size:13px;font-weight:600;color:#44403c;transition:background .2s,color .2s}
+#donateMenu a:hover{background:#fff3ec;color:#732014}
+#donateMenu a i{width:18px;text-align:center;color:#D97B30}
+#donateDropBtn svg{transition:transform .25s}
+#donateDropBtn[aria-expanded="true"] svg{transform:rotate(180deg)}
+
+/* whatsapp float */
+.whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);cursor:pointer;transition:transform .3s;animation:pulse-wa 2s infinite}
+.whatsapp-float:hover{transform:scale(1.1)}
+.whatsapp-float i{font-size:30px;color:#fff}
+@keyframes pulse-wa{0%,100%{box-shadow:0 6px 20px rgba(37,211,102,.45)}50%{box-shadow:0 6px 34px rgba(37,211,102,.75)}}
+
+/* popups */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.popup-modal{background:#fff;border-radius:20px;padding:32px 28px;max-width:520px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative;animation:slideUp .35s cubic-bezier(.4,0,.2,1)}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.popup-close{position:absolute;top:14px;right:18px;font-size:22px;cursor:pointer;color:#888;background:none;border:none}
+.popup-close:hover{color:#732014}
+.form-input{width:100%;padding:12px 16px;border:2px solid #e5e5e5;border-radius:10px;font-size:14px;transition:border-color .3s;background:#fafaf9}
+.form-input:focus{border-color:#D97B30;outline:none;box-shadow:0 0 0 3px rgba(217,123,48,.1)}
+.form-label{font-weight:600;font-size:13px;color:#444;margin-bottom:4px;display:block}
+.btn-submit{background:#25D366;color:#fff;font-weight:700;padding:13px 28px;border-radius:30px;border:none;cursor:pointer;font-size:15px;transition:all .3s;width:100%}
+.btn-submit:hover{background:#1ebe57;box-shadow:0 6px 18px rgba(37,211,102,.4)}
+.support-option{display:flex;align-items:center;gap:14px;padding:14px 16px;border:2px solid #e5e5e5;border-radius:12px;cursor:pointer;transition:all .2s;color:inherit}
+.support-option:hover{border-color:#732014;background:#fff8f7;transform:translateX(4px)}
+
+/* scroll reveal (only hides when JS is running) */
+.js .reveal{opacity:0;transition:opacity .9s cubic-bezier(.23,1,.32,1),transform .9s cubic-bezier(.23,1,.32,1)}
+.js .reveal-up{transform:translateY(40px)}
+.js .reveal-left{transform:translateX(-50px)}
+.js .reveal-right{transform:translateX(50px)}
+.js .reveal-scale{transform:scale(.92)}
+.js .reveal.visible{opacity:1;transform:none}
+.js .stagger-children>*{opacity:0;transform:translateY(34px);transition-property:opacity,transform,box-shadow,background-color,border-color;transition-duration:.7s,.7s,.3s,.3s,.3s;transition-timing-function:cubic-bezier(.23,1,.32,1);transition-delay:calc(var(--i,0)*90ms)}
+.js .stagger-children.visible>*{opacity:1;transform:none}
+.js .stagger-children.done>*{transition-delay:0s!important;transition-duration:.35s,.35s,.3s,.3s,.3s}
+.stagger-children.done>.card-lift:hover,.card-lift:hover{transform:translateY(-8px)}
+.card-lift{transition:transform .35s cubic-bezier(.23,1,.32,1),box-shadow .35s}
+.card-lift:hover{box-shadow:0 18px 36px -10px rgba(0,0,0,.2)}
+.card-lift:hover .news-img{transform:scale(1.07)}
+.card-lift:hover h3,.card-lift:hover h4{color:#732014}
+.news-img{transition:transform .6s cubic-bezier(.23,1,.32,1)}
+.counter-value{display:inline-block;font-variant-numeric:tabular-nums}
+
+/* hero slideshow */
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.hero-slide.active{opacity:.92;animation:kenburns 9s ease-out forwards}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.1)}}
+.hero-dot{width:9px;height:9px;border-radius:99px;background:rgba(255,255,255,.5);transition:all .3s;border:0;cursor:pointer}
+.hero-dot.active{width:28px;background:#D97B30}
+.hero-text>*{animation:heroUp .9s cubic-bezier(.23,1,.32,1) both}
+.hero-text>*:nth-child(2){animation-delay:.18s}
+@keyframes heroUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.float-y{animation:floatY 4s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.beat{animation:beat 2.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}10%,30%{transform:scale(1.12)}20%{transform:scale(1)}}
+
+/* gallery + lightbox */
+.masonry{column-count:2;column-gap:14px}
+@media(min-width:768px){.masonry{column-count:4}}
+.masonry .g-item{break-inside:avoid;margin-bottom:14px;border-radius:14px;overflow:hidden;cursor:zoom-in;position:relative;background:#eee}
+.masonry .g-item img{width:100%;display:block;transition:transform .6s cubic-bezier(.23,1,.32,1)}
+.masonry .g-item:hover img{transform:scale(1.08)}
+.masonry .g-item::after{content:'\f00e';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;right:12px;bottom:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);color:#732014;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:all .3s}
+.masonry .g-item:hover::after{opacity:1;transform:none}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:1100;display:none;align-items:center;justify-content:center;padding:20px}
+#lightbox.open{display:flex;animation:fadeIn .25s}
+#lightbox img{max-height:86vh;max-width:92vw;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+#lightbox button{position:absolute;color:#fff;background:rgba(255,255,255,.15);width:44px;height:44px;border-radius:50%;font-size:20px;transition:background .2s}
+#lightbox button:hover{background:#D97B30}
+
+/* partners */
+.partners-slider-wrapper{overflow:hidden;width:100%}
+.partners-track{display:flex;gap:2rem;width:max-content;animation:scroll-partners 36s linear infinite}
+.partners-slider-wrapper:hover .partners-track{animation-play-state:paused}
+@keyframes scroll-partners{to{transform:translateX(-50%)}}
+.partner-logo-card{flex-shrink:0;width:180px;height:128px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;border-radius:16px;padding:14px 10px;box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eee;transition:all .3s;text-align:center}
+.partner-logo-card:hover{box-shadow:0 12px 28px rgba(0,0,0,.14);border-color:#D97B30;transform:translateY(-4px)}
+.partner-logo{width:56px;height:56px;border-radius:50%;object-fit:contain;background:#fff;border:1px solid #f0ece6;padding:6px;margin-bottom:8px}
+.partner-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#fff;margin-bottom:8px}
+.partner-name{font-size:11px;font-weight:700;color:#444;line-height:1.25}
+.partner-type{font-size:8px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
+@media(max-width:768px){.partner-logo-card{width:140px;height:112px}.partners-track{gap:1.2rem;animation-duration:26s}}
+
+/* mobile */
+.mobile-submenu{max-height:0;overflow:hidden;transition:max-height .35s ease;border-radius:12px;margin-top:6px}
+.mobile-submenu.open{max-height:600px}
+.mobile-nav-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.mobile-submenu-icon{transition:transform .25s}.mobile-submenu-icon.rotated{transform:rotate(180deg)}
+#mobile-drawer{max-height:0;opacity:0;visibility:hidden;overflow:hidden;transition:max-height .5s,opacity .4s,visibility .4s}
+#mobile-drawer.open{max-height:800px;opacity:1;visibility:visible}
+@media(max-width:768px){.whatsapp-float{width:50px;height:50px;bottom:20px;right:16px}.whatsapp-float i{font-size:24px}.popup-modal{padding:22px 16px;border-radius:16px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.js .reveal,.js .stagger-children>*{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body class="bg-[#F9F6F1] font-sans text-stone-900 antialiased selection:bg-secondary selection:text-white">
+<div id="progress"></div>
+<a href="#main-content" class="absolute left-[-9999px] top-auto w-[1px] h-[1px] overflow-hidden focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:w-auto focus:h-auto focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded font-semibold">Skip to main content</a>
+
+<!-- HEADER -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-white border-b border-stone-100 shadow-sm transition-shadow">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-[auto_1fr_auto] items-center h-16 md:h-20 gap-2 sm:gap-4 header-grid">
+      <div class="flex items-center justify-start logo-area">
+        <a href="index.html" class="flex items-center gap-2.5 focus-ring group" aria-label="SCIF Nepal Home">
+          <img src="https://volunteerworknepal.com/wp-content/uploads/2018/06/cropped-logo-website-scif-1-270x270.jpg" alt="SCIF Nepal logo" width="48" height="48" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-secondary/50 bg-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <svg style="display:none" class="h-10 w-10 text-primary beat" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="28" r="14" fill="currentColor"/><path d="M18 78 Q18 48 50 48 Q82 48 82 78" fill="currentColor"/><path d="M50 92 C30 78 24 66 24 58 C24 51 29 47 35 47 C41 47 46 51 50 56 C54 51 59 47 65 47 C71 47 76 51 76 58 C76 66 70 78 50 92Z" fill="#D97B30"/></svg>
+          <span class="brand text-base sm:text-xl font-extrabold tracking-tight uppercase text-primary leading-none">SCIF <span class="text-secondary">Nepal</span><small class="hidden md:block text-[9px] font-semibold tracking-[.18em] text-stone-500 mt-1">Supporting Children Initiative</small></span>
+        </a>
+      </div>
+
+      <nav class="hidden lg:flex items-center justify-center w-full" aria-label="Main Navigation">
+        <div class="flex items-center space-x-6 xl:space-x-8">
+          <!-- Our Work -->
+          <div class="mega-nav-group">
+            <button class="mega-trigger inline-flex items-center text-[14px] xl:text-[15px] font-semibold text-stone-800 hover:text-primary py-2 transition-colors focus-ring" aria-expanded="false" aria-controls="panelOurWork">Our work
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="panelOurWork" class="mega-panel"><div class="mega-panel-inner"><div class="grid grid-cols-12 gap-8">
+              <div class="col-span-3">
+                <h3 class="text-stone-900 font-extrabold text-[13px] uppercase tracking-wider mb-4 border-b border-stone-100 pb-2">What we care about</h3>
+                <ul class="space-y-3">
+                  <li><a href="https://volunteerworknepal.com/2026/05/08/our-children-home-projects/" class="text-stone-700 hover:text-primary font-medium text-sm">Child Care Home</a></li>
+                  <li><a href="https://volunteerworknepal.com/our-project/" class="text-stone-700 hover:text-primary font-medium text-sm">Education &amp; Tutoring</a></li>
+                  <li><a href="https://volunteerworknepal.com/2018/08/22/sponsor-orphan-medical-fees/" class="text-stone-700 hover:text-primary font-medium text-sm">Health &amp; Medical Care</a></li>
+                  <li><a href="https://volunteerworknepal.com/2026/05/08/community-project/" class="text-stone-700 hover:text-primary font-medium text-sm">Community Support &amp; Outreach</a></li>
+                  <li><a href="https://volunteerworknepal.com/2026/09/21/nepal-flash-flood-relief-and-support-action-2026/" class="text-stone-700 hover:text-primary font-medium text-sm">Disaster Relief</a></li>
+                </ul>
+              </div>
+              <div class="col-span-3">
+                <h3 class="text-stone-900 font-extrabold text-[13px] uppercase tracking-wider mb-4 border-b border-stone-100 pb-2">How we work</h3>
+                <ul class="space-y-3">
+                  <li><a href="https://volunteerworknepal.com/category/volunteer-programs/" class="text-stone-700 hover:text-primary font-medium text-sm">Volunteer Programs</a></li>
+                  <li><a href="https://volunteerworknepal.com/category/sponsorship-programs/" class="text-stone-700 hover:text-primary font-medium text-sm">Sponsorship Programs</a></li>
+                  <li><a href="https://volunteerworknepal.com/category/blog/" class="text-stone-700 hover:text-primary font-medium text-sm">Festivals &amp; Cultural Activities</a></li>
+                  <li><a href="https://volunteerworknepal.com/2020/02/09/what-do-orphanages-need-the-most-gifts-for-orphans-ideas/" class="text-stone-700 hover:text-primary font-medium text-sm">What the Home Needs Most</a></li>
+                </ul>
+              </div>
+              <div class="col-span-6 flex flex-row gap-5 bg-stone-50 p-5 rounded-2xl border border-stone-100">
+                <div class="w-1/2"><img src="https://volunteerworknepal.com/wp-content/uploads/2018/06/SCIF-MBI-NEPAL.jpg" alt="Children at SCIF" class="w-full h-40 object-cover rounded-xl shadow-sm" onerror="imgFail(this)"></div>
+                <div class="w-1/2 flex flex-col justify-between">
+                  <p class="text-stone-700 text-sm leading-relaxed font-medium">Every child deserves shelter, food, education and love. SCIF gives 15 children a safe home and a path to university.</p>
+                  <a href="https://volunteerworknepal.com/our-project/" class="inline-block mt-4 px-4 py-2 border-2 border-stone-800 text-stone-900 font-bold text-sm rounded-full hover:bg-stone-900 hover:text-white transition-colors">See our projects →</a>
+                </div>
+              </div>
+            </div></div></div>
+          </div>
+
+          <!-- Get Involved -->
+          <div class="mega-nav-group">
+            <button class="mega-trigger inline-flex items-center text-[14px] xl:text-[15px] font-semibold text-stone-800 hover:text-primary py-2 transition-colors focus-ring" aria-expanded="false" aria-controls="panelGetInvolved">Get Involved
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="panelGetInvolved" class="mega-panel"><div class="mega-panel-inner"><div class="grid grid-cols-12 gap-8">
+              <div class="col-span-5">
+                <h3 class="text-primary font-extrabold text-[13px] uppercase tracking-wider mb-4">✨ Make a difference</h3>
+                <ul class="space-y-3">
+                  <li><a href="#" class="open-volunteer flex items-center gap-3 text-stone-800 hover:text-secondary text-sm"><i class="fas fa-hands-helping text-secondary w-5 text-center"></i>Become a volunteer</a></li>
+                  <li><a href="https://volunteerworknepal.com/2018/06/21/one-day-volunteer-work-kathmandu-nepal/" class="flex items-center gap-3 text-stone-800 hover:text-secondary text-sm"><i class="fas fa-sun text-secondary w-5 text-center"></i>One-day volunteering</a></li>
+                  <li><a href="#" class="open-support flex items-center gap-3 text-stone-800 hover:text-secondary text-sm"><i class="fas fa-hand-holding-heart text-secondary w-5 text-center"></i>Donate</a></li>
+                  <li><a href="https://volunteerworknepal.com/category/sponsorship-programs/" class="flex items-center gap-3 text-stone-800 hover:text-secondary text-sm"><i class="fas fa-child text-secondary w-5 text-center"></i>Sponsor a child</a></li>
+                  <li><a href="https://volunteerworknepal.com/2020/02/09/items-needed-in-orphanages-nepal-house-kitchen-needs/" class="flex items-center gap-3 text-stone-800 hover:text-secondary text-sm"><i class="fas fa-box-open text-secondary w-5 text-center"></i>Donate items &amp; supplies</a></li>
+                  <li><a href="https://volunteerworknepal.com/2020/01/29/where-to-celebrate-birthday-in-kathmandu/" class="flex items-center gap-3 text-stone-800 hover:text-secondary text-sm"><i class="fas fa-cake-candles text-secondary w-5 text-center"></i>Celebrate your birthday with us</a></li>
+                </ul>
+              </div>
+              <div class="col-span-4">
+                <h3 class="text-primary font-extrabold text-[13px] uppercase tracking-wider mb-4">🔍 Explore</h3>
+                <ul class="space-y-3">
+                  <li><a href="https://volunteerworknepal.com/volunteer-testimonials/" class="flex items-center gap-3 text-stone-700 hover:text-secondary text-sm"><i class="fas fa-comments w-5 text-tertiary text-center"></i>Volunteer testimonials</a></li>
+                  <li><a href="#gallery" class="flex items-center gap-3 text-stone-700 hover:text-secondary text-sm"><i class="fas fa-images w-5 text-tertiary text-center"></i>Photo gallery</a></li>
+                  <li><a href="https://volunteerworknepal.com/category/blog/" class="flex items-center gap-3 text-stone-700 hover:text-secondary text-sm"><i class="fas fa-newspaper w-5 text-tertiary text-center"></i>Blog &amp; stories</a></li>
+                  <li><a href="https://www.instagram.com/scif_nepal/" class="flex items-center gap-3 text-stone-700 hover:text-secondary text-sm"><i class="fab fa-instagram w-5 text-tertiary text-center"></i>Follow us on Instagram</a></li>
+                </ul>
+              </div>
+              <div class="col-span-3 bg-stone-50 p-5 rounded-2xl border border-stone-100">
+                <h3 class="font-extrabold text-stone-800 text-[13px] mb-3">📢 Connect with us</h3>
+                <div class="space-y-3">
+                  <a href="mailto:scifmbi.nepal@gmail.com" class="flex items-center gap-3 text-stone-700 text-xs hover:text-primary break-all"><i class="fas fa-envelope text-secondary w-5"></i>scifmbi.nepal@gmail.com</a>
+                  <a href="tel:+9779861304486" class="flex items-center gap-3 text-stone-700 text-sm hover:text-primary"><i class="fas fa-phone-alt text-secondary w-5"></i>+977 9861304486</a>
+                  <div class="flex gap-4 pt-2">
+                    <a href="https://www.facebook.com/scifnepal/" aria-label="Facebook"><i class="fab fa-facebook text-xl text-stone-600 hover:text-secondary"></i></a>
+                    <a href="https://www.instagram.com/scif_nepal/" aria-label="Instagram"><i class="fab fa-instagram text-xl text-stone-600 hover:text-secondary"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=9779861304486" aria-label="WhatsApp"><i class="fab fa-whatsapp text-xl text-stone-600 hover:text-secondary"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div></div></div>
+          </div>
+
+          <!-- About Us -->
+          <div class="mega-nav-group">
+            <button class="mega-trigger inline-flex items-center text-[14px] xl:text-[15px] font-semibold text-stone-800 hover:text-primary py-2 transition-colors focus-ring" aria-expanded="false" aria-controls="panelAbout">About us
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="panelAbout" class="mega-panel"><div class="mega-panel-inner"><div class="grid grid-cols-12 gap-8">
+              <div class="col-span-4">
+                <h3 class="font-extrabold text-primary text-[13px] uppercase tracking-wider mb-4 border-b border-stone-100 pb-2">Our identity</h3>
+                <ul class="space-y-3">
+                  <li><a href="https://volunteerworknepal.com/2026/03/29/introduction/" class="text-stone-700 hover:text-primary text-sm font-medium">Introduction</a></li>
+                  <li><a href="#about" class="text-stone-700 hover:text-primary text-sm font-medium">Our Story</a></li>
+                  <li><a href="https://volunteerworknepal.com/2018/06/19/orphan-new-home/" class="text-stone-700 hover:text-primary text-sm font-medium">Our Home in Chobhar</a></li>
+                </ul>
+              </div>
+              <div class="col-span-4">
+                <h3 class="font-extrabold text-primary text-[13px] uppercase tracking-wider mb-4 border-b border-stone-100 pb-2">People</h3>
+                <ul class="space-y-3">
+                  <li><a href="https://volunteerworknepal.com/our-teams/" class="text-stone-700 hover:text-primary text-sm font-medium">Our Team</a></li>
+                  <li><a href="#partners" class="text-stone-700 hover:text-primary text-sm font-medium">Our Partners</a></li>
+                  <li><a href="#contact" class="text-stone-700 hover:text-primary text-sm font-medium">Find Us &amp; Contact</a></li>
+                </ul>
+              </div>
+              <div class="col-span-4">
+                <h3 class="font-extrabold text-primary text-[13px] uppercase tracking-wider mb-4 border-b border-stone-100 pb-2">Latest &amp; stories</h3>
+                <ul class="space-y-3">
+                  <li><a href="https://volunteerworknepal.com/category/blog/" class="text-stone-700 hover:text-primary text-sm font-medium">Stories and updates</a></li>
+                  <li><a href="#gallery" class="text-stone-700 hover:text-primary text-sm font-medium">Gallery</a></li>
+                </ul>
+                <div class="mt-6 pt-4 border-t border-stone-100"><a href="#about" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold inline-block hover:bg-secondary transition-colors">Discover who we are →</a></div>
+              </div>
+            </div></div></div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex items-center justify-end space-x-2 xl:space-x-3 right-controls">
+        <div class="flex items-center lang-toggle-container">
+          <button id="langEnBtn" class="lang-btn active" aria-label="Switch to English">EN</button>
+          <button id="langNeBtn" class="lang-btn" aria-label="Switch to Nepali">ने</button>
+        </div>
+        <div id="google_translate_element" style="display:none"></div>
+        <a href="#" class="open-volunteer hidden sm:inline-flex px-4 xl:px-6 py-2 xl:py-2.5 rounded-full bg-[#54160E] text-white font-bold text-[12px] xl:text-[14px] tracking-wide hover:bg-primary transition-colors focus-ring shadow-sm whitespace-nowrap">Volunteer</a>
+        <div class="relative hidden sm:inline-flex" id="donateGroup">
+          <div class="inline-flex rounded-full shadow-sm">
+            <a href="#" class="open-support px-4 xl:px-6 py-2 xl:py-2.5 rounded-l-full bg-[#D14D33] text-white font-bold text-[12px] xl:text-[14px] tracking-wide hover:bg-secondary transition-colors focus-ring whitespace-nowrap">Donate</a>
+            <button id="donateDropBtn" aria-haspopup="true" aria-expanded="false" aria-controls="donateMenu" class="px-2 xl:px-3 py-2 xl:py-2.5 rounded-r-full bg-[#BF3F26] text-white hover:bg-secondary transition-colors focus-ring border-l border-white/20" aria-label="More ways to give">
+              <svg class="w-3 h-3 xl:w-4 xl:h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          </div>
+          <div id="donateMenu" role="menu">
+            <a href="#" class="open-support" role="menuitem"><i class="fas fa-qrcode"></i>Bank transfer / Fonepay</a>
+            <a href="https://volunteerworknepal.com/2018/08/24/sponsor-monthly-house-rental/" role="menuitem"><i class="fas fa-house"></i>Sponsor the house rent</a>
+            <a href="https://volunteerworknepal.com/2018/08/22/sponsor-orphan-medical-fees/" role="menuitem"><i class="fas fa-briefcase-medical"></i>Sponsor medical fees</a>
+            <a href="https://api.whatsapp.com/send?phone=9779861304486&text=I%20would%20like%20to%20donate%20items%20to%20SCIF%20Nepal" target="_blank" rel="noopener" role="menuitem"><i class="fas fa-box-open"></i>Donate items</a>
+            <a href="#" class="open-volunteer" role="menuitem"><i class="fas fa-hands-helping"></i>Become a volunteer</a>
+          </div>
+        </div>
+        <div class="flex items-center lg:hidden">
+          <button id="mobile-menu-btn" class="p-2 rounded-md text-stone-800 hover:bg-stone-100 focus-ring" aria-label="Toggle Navigation Menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-drawer" class="lg:hidden bg-white border-b border-stone-200 px-4 py-5 space-y-3">
+    <div class="mobile-nav-item">
+      <div class="mobile-nav-header py-2 border-b border-stone-100 font-bold text-stone-800"><span>Our work</span>
+        <svg class="mobile-submenu-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div>
+      <div class="mobile-submenu bg-stone-50 p-3"><ul class="space-y-2 pl-2">
+        <li><a href="https://volunteerworknepal.com/2026/05/08/our-children-home-projects/" class="text-sm text-stone-600 hover:text-primary">Child Care Home</a></li>
+        <li><a href="https://volunteerworknepal.com/our-project/" class="text-sm text-stone-600 hover:text-primary">Education &amp; Tutoring</a></li>
+        <li><a href="https://volunteerworknepal.com/2026/05/08/community-project/" class="text-sm text-stone-600 hover:text-primary">Community Support &amp; Outreach</a></li>
+        <li><a href="https://volunteerworknepal.com/category/sponsorship-programs/" class="text-sm text-stone-600 hover:text-primary">Sponsorship Programs</a></li>
+      </ul></div>
+    </div>
+    <div class="mobile-nav-item">
+      <div class="mobile-nav-header py-2 border-b border-stone-100 font-bold text-stone-800"><span>Get Involved</span>
+        <svg class="mobile-submenu-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div>
+      <div class="mobile-submenu bg-stone-50 p-3"><ul class="space-y-2 pl-2">
+        <li><a href="#" class="open-volunteer text-sm text-stone-700 hover:text-primary">Become a volunteer</a></li>
+        <li><a href="https://volunteerworknepal.com/2018/06/21/one-day-volunteer-work-kathmandu-nepal/" class="text-sm text-stone-700 hover:text-primary">One-day volunteering</a></li>
+        <li><a href="#" class="open-support text-sm text-stone-700 hover:text-primary">Donate</a></li>
+        <li><a href="mailto:scifmbi.nepal@gmail.com" class="text-sm text-primary font-semibold">📧 scifmbi.nepal@gmail.com</a></li>
+      </ul></div>
+    </div>
+    <div class="mobile-nav-item">
+      <div class="mobile-nav-header py-2 border-b border-stone-100 font-bold text-stone-800"><span>About us</span>
+        <svg class="mobile-submenu-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div>
+      <div class="mobile-submenu bg-stone-50 p-3"><ul class="space-y-2 pl-2">
+        <li><a href="#about" class="text-sm text-stone-700 hover:text-primary">Our Story</a></li>
+        <li><a href="https://volunteerworknepal.com/our-teams/" class="text-sm text-stone-700 hover:text-primary">Our Team</a></li>
+        <li><a href="#gallery" class="text-sm text-stone-700 hover:text-primary">Gallery</a></li>
+        <li><a href="#contact" class="text-sm text-stone-700 hover:text-primary">Find us</a></li>
+      </ul></div>
+    </div>
+    <div class="pt-3 flex flex-col gap-2">
+      <a href="#" class="open-volunteer w-full text-center py-2.5 rounded-full bg-primary text-white font-bold text-sm">Volunteer</a>
+      <a href="#" class="open-support w-full text-center py-2.5 rounded-full bg-secondary text-white font-bold text-sm">Donate</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SLIDESHOW -->
+<main id="main-content" class="relative">
+  <div class="w-full relative overflow-hidden bg-stone-900 aspect-[16/9] md:aspect-[21/9] min-h-[350px] md:min-h-[430px]">
+    <img src="https://volunteerworknepal.com/wp-content/uploads/2018/06/SCIF-MBI-NEPAL.jpg" alt="The children of SCIF Nepal" class="hero-slide active" onerror="imgFail(this)">
+    <img src="https://volunteerworknepal.com/wp-content/uploads/2018/08/20220621_084429-1-scaled.jpg" alt="SCIF children's home in Kathmandu" class="hero-slide" onerror="imgFail(this)">
+    <img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20250101-WA0011.jpg" alt="New Year 2025 at SCIF" class="hero-slide" onerror="imgFail(this)">
+    <img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-07-at-16.25.37_82edce1f.jpg" alt="SCIF children with a visiting supporter" class="hero-slide" onerror="imgFail(this)">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+    <div class="absolute bottom-6 left-4 md:left-8 flex items-center gap-2" id="heroDots"></div>
+    <div class="absolute bottom-5 right-4 md:right-8 text-white/80 text-[10px] md:text-[11px] pointer-events-none hidden sm:flex items-center gap-1.5"><i class="fas fa-location-dot text-secondary"></i>SCIF Nepal · Kirtipur-06, Chobhar, Kathmandu</div>
+  </div>
+  <div class="bg-primary text-white w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
+      <div class="max-w-3xl hero-text">
+        <h1 class="text-xl sm:text-2xl md:text-4xl font-extrabold tracking-tight">A Home, an Education and a Future for Every Child</h1>
+        <p class="mt-2 text-stone-200 text-sm md:text-lg">Supporting Children Initiative Foundation (SCIF) is a small non-profit children's home in Kathmandu, giving 15 children aged 5 to 18 shelter, food, schooling, love and care.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ABOUT -->
+<section id="about" class="py-14 md:py-24 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div class="relative reveal reveal-left pb-10 pr-8 sm:pr-14">
+      <img src="https://volunteerworknepal.com/wp-content/uploads/2018/08/20220621_084429-1-scaled.jpg" alt="Our children's home in Chobhar" loading="lazy" class="w-full aspect-[4/3] object-cover rounded-3xl shadow-xl" onerror="imgFail(this)">
+      <img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20231125-WA0004-1-1024x768.jpg" alt="Children of SCIF together" loading="lazy" class="float-y absolute -bottom-0 right-0 w-1/2 aspect-square object-cover rounded-2xl border-4 border-white shadow-xl" onerror="imgFail(this)">
+      <div class="absolute top-4 -left-2 sm:-left-4 bg-secondary text-white rounded-2xl px-4 py-3 shadow-lg"><span class="block text-3xl font-extrabold leading-none">15</span><span class="text-[11px] font-semibold uppercase tracking-wide">children, one family</span></div>
+    </div>
+    <div class="reveal reveal-right">
+      <p class="text-xs font-extrabold tracking-widest text-secondary uppercase mb-2">About SCIF</p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D2D2D] tracking-tight leading-tight">A small home with <span class="font-serif-italic font-normal text-gray-600">a very big heart</span></h2>
+      <p class="mt-4 text-sm md:text-base text-gray-600 leading-relaxed">SCIF began with just four children and a house manager's sister. Over the years the family grew to the 15 children we care for today, looked after by a house manager and two dedicated staff who take minimal wages to cook, clean and tutor.</p>
+      <p class="mt-3 text-sm md:text-base text-gray-600 leading-relaxed">Our dream is to put every child through university, so they can find a decent job and one day become a beacon of light for less fortunate children.</p>
+      <ul class="mt-5 grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-700">
+        <li><i class="fas fa-circle-check text-secondary mr-2"></i>Tutor &amp; help with homework</li>
+        <li><i class="fas fa-circle-check text-secondary mr-2"></i>Stationery &amp; school supplies</li>
+        <li><i class="fas fa-circle-check text-secondary mr-2"></i>Rice, oil, fruits &amp; food</li>
+        <li><i class="fas fa-circle-check text-secondary mr-2"></i>Warm clothes for winter</li>
+      </ul>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#" class="open-support bg-primary text-white text-sm font-bold px-7 py-3 rounded-full hover:bg-secondary transition-colors">Donate Now</a>
+        <a href="https://volunteerworknepal.com/2026/03/29/introduction/" class="border-2 border-stone-800 text-stone-900 text-sm font-bold px-7 py-3 rounded-full hover:bg-stone-900 hover:text-white transition-colors">Read Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES SLIDER -->
+<section class="py-12 md:py-24 bg-[#F9F6F1] relative reveal reveal-up">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 md:mb-12 gap-4">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2D2D2D] tracking-tight leading-tight">We care for children<br><span class="font-serif-italic font-normal text-gray-600 block sm:inline">in every part of life</span></h2>
+      <a href="https://volunteerworknepal.com/our-project/" class="inline-flex items-center text-xs font-bold tracking-widest text-[#732014] hover:text-[#D97B30] transition-colors uppercase">VIEW ALL PROJECTS <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+    </div>
+    <div id="sliderWrap" class="relative w-full group/slider pb-10 pt-2">
+      <button id="prevSlide" aria-label="Previous" class="absolute -left-3 md:-left-4 top-1/3 z-10 bg-white shadow-lg p-2 md:p-3 rounded-full text-[#732014] hover:bg-[#D97B30] hover:text-white transition-all hidden md:flex items-center justify-center opacity-0 group-hover/slider:opacity-100"><svg class="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+      <button id="nextSlide" aria-label="Next" class="absolute -right-3 md:-right-4 top-1/3 z-10 bg-white shadow-lg p-2 md:p-3 rounded-full text-[#732014] hover:bg-[#D97B30] hover:text-white transition-all hidden md:flex items-center justify-center opacity-0 group-hover/slider:opacity-100"><svg class="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+      <div class="overflow-hidden w-full px-1 md:px-2 py-2 md:py-4">
+        <div id="sliderTrack" class="flex gap-4 md:gap-6 transition-transform duration-500 ease-in-out">
+          <a href="https://volunteerworknepal.com/2026/05/08/our-children-home-projects/" class="slide-card w-[82vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 group flex flex-col focus-ring bg-white hover:bg-stone-50 transition-colors rounded-xl overflow-hidden shadow-sm card-lift">
+            <div class="overflow-hidden aspect-[3/4] bg-gray-100"><img src="https://volunteerworknepal.com/wp-content/uploads/2018/08/20220621_084429-1-scaled.jpg" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Child care home" onerror="imgFail(this)"></div>
+            <div class="p-4"><h3 class="text-lg md:text-xl font-bold text-gray-900 mb-1">Child Care Home</h3><p class="text-xs md:text-sm text-gray-600">Shelter, meals, clothing and a loving family for 15 children.</p></div>
+          </a>
+          <a href="https://volunteerworknepal.com/2018/07/13/volunteer-work-nepal-kathmandu/" class="slide-card w-[82vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 group flex flex-col focus-ring bg-white hover:bg-stone-50 transition-colors rounded-xl overflow-hidden shadow-sm card-lift">
+            <div class="overflow-hidden aspect-[3/4] bg-gray-100"><img src="https://volunteerworknepal.com/wp-content/uploads/2018/06/SCIF-MBI-NEPAL.jpg" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Education" onerror="imgFail(this)"></div>
+            <div class="p-4"><h3 class="text-lg md:text-xl font-bold text-gray-900 mb-1">Education</h3><p class="text-xs md:text-sm text-gray-600">School fees, stationery and daily tutoring, with university as the goal.</p></div>
+          </a>
+          <a href="https://volunteerworknepal.com/2018/08/22/sponsor-orphan-medical-fees/" class="slide-card w-[82vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 group flex flex-col focus-ring bg-white hover:bg-stone-50 transition-colors rounded-xl overflow-hidden shadow-sm card-lift">
+            <div class="overflow-hidden aspect-[3/4] bg-gray-100"><img src="https://volunteerworknepal.com/wp-content/uploads/2018/08/medical-file.jpg" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Health" onerror="imgFail(this)"></div>
+            <div class="p-4"><h3 class="text-lg md:text-xl font-bold text-gray-900 mb-1">Health &amp; Hygiene</h3><p class="text-xs md:text-sm text-gray-600">Eye, dental and medical check-ups plus hygiene education.</p></div>
+          </a>
+          <a href="https://volunteerworknepal.com/2026/05/08/community-project/" class="slide-card w-[82vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 group flex flex-col focus-ring bg-white hover:bg-stone-50 transition-colors rounded-xl overflow-hidden shadow-sm card-lift">
+            <div class="overflow-hidden aspect-[3/4] bg-gray-100"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20231029-WA0029-1-1024x943.jpg" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community outreach" onerror="imgFail(this)"></div>
+            <div class="p-4"><h3 class="text-lg md:text-xl font-bold text-gray-900 mb-1">Community Outreach</h3><p class="text-xs md:text-sm text-gray-600">Support programs for village schools and families in need.</p></div>
+          </a>
+          <a href="https://volunteerworknepal.com/2026/09/21/nepal-flash-flood-relief-and-support-action-2026/" class="slide-card w-[82vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 group flex flex-col focus-ring bg-white hover:bg-stone-50 transition-colors rounded-xl overflow-hidden shadow-sm card-lift">
+            <div class="overflow-hidden aspect-[3/4] bg-gray-100"><img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=600&q=80" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Disaster relief" onerror="imgFail(this)"></div>
+            <div class="p-4"><h3 class="text-lg md:text-xl font-bold text-gray-900 mb-1">Disaster Relief</h3><p class="text-xs md:text-sm text-gray-600">Flash flood relief and support action for affected communities.</p></div>
+          </a>
+          <a href="https://volunteerworknepal.com/category/blog/" class="slide-card w-[82vw] sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 group flex flex-col focus-ring bg-white hover:bg-stone-50 transition-colors rounded-xl overflow-hidden shadow-sm card-lift">
+            <div class="overflow-hidden aspect-[3/4] bg-gray-100"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20250101-WA0011.jpg" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Festivals and outings" onerror="imgFail(this)"></div>
+            <div class="p-4"><h3 class="text-lg md:text-xl font-bold text-gray-900 mb-1">Festivals &amp; Outings</h3><p class="text-xs md:text-sm text-gray-600">Dashain, Deepavali, Holi, hikes and tours that make childhood joyful.</p></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="py-14 md:py-20 bg-white reveal reveal-up">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-8 md:mb-12">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">Our family <span class="font-serif-italic font-normal text-gray-700">at a glance</span></h2>
+      <p class="text-xs md:text-sm text-gray-600 mt-2 md:mt-3 font-medium">Small by design, so every child gets personal care.</p>
+    </div>
+    <div class="divide-y divide-gray-200/80 border-t border-b border-gray-200/80 stagger-children">
+      <div class="py-5 md:py-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center">
+        <div class="md:col-span-5"><p class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900"><span class="counter-value" data-target="15">0</span><span class="text-gray-500 font-medium text-lg md:text-xl ml-1">Children in our care</span></p></div>
+        <div class="md:col-span-7"><p class="text-xs md:text-sm text-gray-600">What began with just four children and the house manager's sister has grown into a family of 15, aged 5 to 18.</p></div>
+      </div>
+      <div class="py-5 md:py-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center">
+        <div class="md:col-span-5"><p class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900"><span class="counter-value" data-target="3">0</span><span class="text-gray-500 font-medium text-lg md:text-xl ml-1">Caregivers, full-time</span></p></div>
+        <div class="md:col-span-7"><p class="text-xs md:text-sm text-gray-600">A house manager and two staff members, Mrs. Lila Sunar and Miss Gita Malla, take minimal wages to cook, clean and tutor.</p></div>
+      </div>
+      <div class="py-5 md:py-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center">
+        <div class="md:col-span-5"><p class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900">University <span class="text-gray-500 font-medium text-lg md:text-xl ml-1">is the dream</span></p></div>
+        <div class="md:col-span-7"><p class="text-xs md:text-sm text-gray-600">Our goal is to put every child through university so they can find a decent job and become a beacon of light for less fortunate children.</p></div>
+      </div>
+      <div class="py-5 md:py-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center">
+        <div class="md:col-span-5"><p class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900">Volunteers <span class="text-gray-500 font-medium text-lg md:text-xl ml-1">from around the world</span></p></div>
+        <div class="md:col-span-7"><p class="text-xs md:text-sm text-gray-600">Visitors from Europe, the USA and beyond stay from one day to several months to tutor, cook and share new skills.</p></div>
+      </div>
+      <div class="py-5 md:py-8 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center">
+        <div class="md:col-span-5"><p class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900">Community <span class="text-gray-500 font-medium text-lg md:text-xl ml-1">funded</span></p></div>
+        <div class="md:col-span-7"><p class="text-xs md:text-sm text-gray-600">The children's expenses are funded by a changing group of friends, a core supporter and our volunteer program. Every dollar helps on food and house expenses.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR APPROACH -->
+<section class="py-12 md:py-20 bg-[#F9F6F1] reveal reveal-up">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Our <span class="font-serif-italic font-normal text-gray-700">Approach</span></h2>
+      <div class="w-8 md:w-10 h-1 bg-[#D97B30] mx-auto mt-4 md:mt-5 mb-2"></div>
+      <p class="text-xs md:text-sm text-gray-600 mt-2 max-w-2xl mx-auto">Love, routine and opportunity: the things we give every child under our roof.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 stagger-children">
+      <div class="card-lift bg-white border border-stone-100 rounded-xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"><i class="fas fa-house-chimney-user text-primary text-2xl"></i></div>
+        <h3 class="font-extrabold text-lg text-gray-900 mb-2">Shelter, Food &amp; Clothing</h3>
+        <p class="text-sm text-gray-600">A safe, warm home with nutritious meals and clothes for all four seasons, because our house is not heated and winters are hard.</p>
+        <a href="https://volunteerworknepal.com/2020/11/16/need-help-to-survive-the-winter-2020/" class="inline-flex items-center text-xs font-bold text-primary mt-4 hover:text-secondary">Learn more →</a>
+      </div>
+      <div class="card-lift bg-white border border-stone-100 rounded-xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"><i class="fas fa-book-open-reader text-primary text-2xl"></i></div>
+        <h3 class="font-extrabold text-lg text-gray-900 mb-2">Quality Education</h3>
+        <p class="text-sm text-gray-600">School admission, uniforms, books and homework help every evening, so each child can reach their full potential.</p>
+        <a href="https://volunteerworknepal.com/2018/06/21/the-school-demands-3-sets-of-school-uniforms-for-each-kids/" class="inline-flex items-center text-xs font-bold text-primary mt-4 hover:text-secondary">Learn more →</a>
+      </div>
+      <div class="card-lift bg-white border border-stone-100 rounded-xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"><i class="fas fa-heart-pulse text-primary text-2xl"></i></div>
+        <h3 class="font-extrabold text-lg text-gray-900 mb-2">Health &amp; Wellbeing</h3>
+        <p class="text-sm text-gray-600">Regular eye screening, dental camps and hygiene education, run with partners such as People's Dental College and Rotaract.</p>
+        <a href="https://volunteerworknepal.com/2026/09/03/eye-screening-and-dental-check-up/" class="inline-flex items-center text-xs font-bold text-primary mt-4 hover:text-secondary">Learn more →</a>
+      </div>
+      <div class="card-lift bg-white border border-stone-100 rounded-xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"><i class="fas fa-earth-asia text-primary text-2xl"></i></div>
+        <h3 class="font-extrabold text-lg text-gray-900 mb-2">Volunteer Exchange</h3>
+        <p class="text-sm text-gray-600">Volunteers tutor, cook, teach new skills and share their culture, giving the children a wider view of the world.</p>
+        <a href="https://volunteerworknepal.com/category/volunteer-programs/" class="inline-flex items-center text-xs font-bold text-primary mt-4 hover:text-secondary">Learn more →</a>
+      </div>
+      <div class="card-lift bg-white border border-stone-100 rounded-xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"><i class="fas fa-masks-theater text-primary text-2xl"></i></div>
+        <h3 class="font-extrabold text-lg text-gray-900 mb-2">Culture &amp; Joyful Childhood</h3>
+        <p class="text-sm text-gray-600">Festivals, hikes, picnics, football and talent shows. Dolma Tamang, for one, won 2nd place in a school singing contest.</p>
+        <a href="https://volunteerworknepal.com/2025/02/01/dolma-achieved-2nd-position-in-shubhakamana-idol-2024/" class="inline-flex items-center text-xs font-bold text-primary mt-4 hover:text-secondary">Learn more →</a>
+      </div>
+      <div class="card-lift bg-white border border-stone-100 rounded-xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"><i class="fas fa-seedling text-primary text-2xl"></i></div>
+        <h3 class="font-extrabold text-lg text-gray-900 mb-2">A Self-Sustaining Future</h3>
+        <p class="text-sm text-gray-600">Linking with Eyes On Nepal, a local tour operator, to create jobs so graduates can support themselves and carry the legacy forward.</p>
+        <a href="https://www.eyesonnepal.com/" class="inline-flex items-center text-xs font-bold text-primary mt-4 hover:text-secondary">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-14 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 md:mb-14 reveal reveal-up">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Life at <span class="font-serif-italic font-normal text-gray-700">SCIF</span></h2>
+      <div class="w-8 md:w-10 h-1 bg-[#D97B30] mx-auto mt-4 md:mt-5 mb-2"></div>
+      <p class="text-xs md:text-sm text-gray-600 mt-2 max-w-2xl mx-auto">Festivals, school days and everyday moments from our home in Chobhar. Tap a photo to enlarge it.</p>
+    </div>
+    <div class="masonry stagger-children" id="galleryGrid">
+      <div class="g-item"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/20231112_145931-1-1024x513.jpg" alt="Moments at SCIF" loading="lazy" onerror="imgFail(this)"></div>
+      <div class="g-item"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20231029-WA0029-1-1024x943.jpg" alt="Moments at SCIF" loading="lazy" onerror="imgFail(this)"></div>
+      <div class="g-item"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/20231224_170226-1-1024x654.jpg" alt="Moments at SCIF" loading="lazy" onerror="imgFail(this)"></div>
+      <div class="g-item"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20231125-WA0004-1-1024x768.jpg" alt="Moments at SCIF" loading="lazy" onerror="imgFail(this)"></div>
+      <div class="g-item"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/20231115_124037-1-1024x457.jpg" alt="Moments at SCIF" loading="lazy" onerror="imgFail(this)"></div>
+      <div class="g-item"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20231029-WA0010-1-1024x883.jpg" alt="Moments at SCIF" loading="lazy" onerror="imgFail(this)"></div>
+      <div class="g-item"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/20220725_135547-1024x462.jpg" alt="Moments at SCIF" loading="lazy" onerror="imgFail(this)"></div>
+      <div class="g-item"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG_20211015_180715_855-1024x576.jpg" alt="Moments at SCIF" loading="lazy" onerror="imgFail(this)"></div>
+    </div>
+    <div class="text-center mt-8 reveal reveal-up"><a href="https://volunteerworknepal.com/1308-2/" class="inline-flex items-center text-xs font-bold tracking-widest text-[#732014] hover:text-[#D97B30] transition-colors uppercase">VIEW FULL GALLERY &amp; VIDEOS →</a></div>
+  </div>
+</section>
+
+<!-- JOIN OUR FAMILY -->
+<section class="bg-[#F9F6F1] py-20 px-4 sm:px-6 lg:px-8 reveal reveal-up">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Join <span class="font-serif italic font-semibold text-gray-800 ml-1">Our Family</span></h2>
+    <p class="mt-3 text-base text-gray-600 max-w-xl mx-auto font-medium">Be part of the change. Your support drives everything we do.</p>
+    <div class="w-12 h-1 bg-secondary mx-auto mt-4 mb-16"></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+      <div class="card-lift bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-between items-center text-center">
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6"><i class="fas fa-hand-holding-dollar text-2xl"></i></div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Donate</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-8">Cash, food, clothes or stationery: every gift goes straight to feeding, clothing and schooling our children.</p>
+        </div>
+        <a href="#" class="open-support w-full sm:w-auto bg-primary text-white text-sm font-bold px-8 py-3 rounded-full hover:bg-secondary transition-colors">Donate Now</a>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-between items-center text-center">
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-6"><i class="fas fa-hands-holding-child text-2xl"></i></div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Volunteer</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-8">Visit for a day or stay for months. Help with homework, teaching, cooking and play, and give the children your love.</p>
+        </div>
+        <a href="#" class="open-volunteer w-full sm:w-auto bg-primary text-white text-sm font-bold px-8 py-3 rounded-full hover:bg-secondary transition-colors">Become a Volunteer</a>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-between items-center text-center">
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-6"><i class="fas fa-handshake-angle text-2xl"></i></div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Sponsor</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-8">Sponsor the monthly house rent or a child's medical fees, and help us keep a stable home for the children.</p>
+        </div>
+        <a href="https://volunteerworknepal.com/category/sponsorship-programs/" class="w-full sm:w-auto bg-primary text-white text-sm font-bold px-8 py-3 rounded-full hover:bg-secondary transition-colors">Sponsorship Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST -->
+<section class="py-12 md:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-lg sm:text-xl md:text-2xl font-black text-gray-900 mb-6 md:mb-8 tracking-tight uppercase reveal reveal-up">Latest from SCIF Nepal</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10">
+      <div class="lg:col-span-7 flex flex-col reveal reveal-left">
+        <a href="https://volunteerworknepal.com/2026/09/03/eye-screening-and-dental-check-up/" class="card-lift block rounded-lg">
+          <div class="overflow-hidden mb-3 md:mb-5 bg-gray-100 rounded-lg aspect-[16/10]"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/20231112_145931-1-1024x513.jpg" loading="lazy" class="news-img w-full h-full object-cover" alt="Eye and dental check-up at SCIF" onerror="imgFail(this)"></div>
+          <span class="text-[9px] md:text-[10px] font-extrabold text-[#004163] tracking-widest uppercase mb-1 block">HEALTH</span>
+          <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 leading-tight transition-colors">Eye screening and dental check-up held for our children with People's Dental College and Rotaract Club of Pulchok</h3>
+          <span class="text-[11px] md:text-xs text-gray-400 font-medium mt-1 block">3 September 2026</span>
+        </a>
+      </div>
+      <div class="lg:col-span-5 flex flex-col justify-between space-y-5 stagger-children">
+        <a href="https://volunteerworknepal.com/2026/09/21/nepal-flash-flood-relief-and-support-action-2026/" class="card-lift flex flex-row gap-3 md:gap-5 items-start rounded-lg">
+          <div class="w-20 h-16 md:w-36 md:h-24 shrink-0 overflow-hidden bg-gray-100 rounded-md"><img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=400&q=80" loading="lazy" class="news-img w-full h-full object-cover" alt="Flood relief" onerror="imgFail(this)"></div>
+          <div><span class="text-[8px] md:text-[9px] font-extrabold text-tertiary uppercase block">RELIEF</span><h4 class="text-xs md:text-sm lg:text-base font-bold text-gray-900 leading-snug mt-0.5 transition-colors">Nepal Flash Flood Relief and Support Action 2026</h4><span class="text-[10px] md:text-[11px] text-gray-400">21 September 2026</span></div>
+        </a>
+        <a href="https://volunteerworknepal.com/2026/07/26/educational-health-and-hygiene-at-scif-nepal-in-partnership-with-the-rotaract-club/" class="card-lift flex flex-row gap-3 md:gap-5 items-start rounded-lg">
+          <div class="w-20 h-16 md:w-36 md:h-24 shrink-0 overflow-hidden bg-gray-100 rounded-md"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20231029-WA0010-1-1024x883.jpg" loading="lazy" class="news-img w-full h-full object-cover" alt="Health and hygiene education" onerror="imgFail(this)"></div>
+          <div><span class="text-[8px] md:text-[9px] font-extrabold text-tertiary uppercase block">EDUCATION</span><h4 class="text-xs md:text-sm lg:text-base font-bold text-gray-900 leading-snug mt-0.5 transition-colors">Educational health and hygiene at SCIF Nepal with the Rotaract Club</h4><span class="text-[10px] md:text-[11px] text-gray-400">26 July 2026</span></div>
+        </a>
+        <a href="https://volunteerworknepal.com/2026/03/25/community-support-program-successfully-completed-at-rukum-village-school-feb-2026/" class="card-lift flex flex-row gap-3 md:gap-5 items-start rounded-lg">
+          <div class="w-20 h-16 md:w-36 md:h-24 shrink-0 overflow-hidden bg-gray-100 rounded-md"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20231029-WA0029-1-1024x943.jpg" loading="lazy" class="news-img w-full h-full object-cover" alt="Rukum school program" onerror="imgFail(this)"></div>
+          <div><span class="text-[8px] md:text-[9px] font-extrabold text-tertiary uppercase block">COMMUNITY</span><h4 class="text-xs md:text-sm lg:text-base font-bold text-gray-900 leading-snug mt-0.5 transition-colors">Community support program completed at Rukum village school</h4><span class="text-[10px] md:text-[11px] text-gray-400">25 March 2026</span></div>
+        </a>
+        <a href="https://volunteerworknepal.com/2026/03/29/holi-at-scif-nepal-home-a-festival-full-of-color-and-joy-mar-2-2026/" class="card-lift flex flex-row gap-3 md:gap-5 items-start rounded-lg">
+          <div class="w-20 h-16 md:w-36 md:h-24 shrink-0 overflow-hidden bg-gray-100 rounded-md"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/IMG-20250101-WA0011.jpg" loading="lazy" class="news-img w-full h-full object-cover" alt="Holi at SCIF" onerror="imgFail(this)"></div>
+          <div><span class="text-[8px] md:text-[9px] font-extrabold text-tertiary uppercase block">FESTIVALS</span><h4 class="text-xs md:text-sm lg:text-base font-bold text-gray-900 leading-snug mt-0.5 transition-colors">Holi at SCIF Nepal Home: a festival full of color and joy</h4><span class="text-[10px] md:text-[11px] text-gray-400">1 March 2026</span></div>
+        </a>
+        <a href="https://volunteerworknepal.com/2025/10/28/scif-pokhara-tour-2025/" class="card-lift flex flex-row gap-3 md:gap-5 items-start rounded-lg">
+          <div class="w-20 h-16 md:w-36 md:h-24 shrink-0 overflow-hidden bg-gray-100 rounded-md"><img src="https://volunteerworknepal.com/wp-content/uploads/2025/02/20231224_170226-1-1024x654.jpg" loading="lazy" class="news-img w-full h-full object-cover" alt="Pokhara tour" onerror="imgFail(this)"></div>
+          <div><span class="text-[8px] md:text-[9px] font-extrabold text-tertiary uppercase block">OUTINGS</span><h4 class="text-xs md:text-sm lg:text-base font-bold text-gray-900 leading-snug mt-0.5 transition-colors">SCIF Pokhara Tour 2025</h4><span class="text-[10px] md:text-[11px] text-gray-400">28 October 2025</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER STORIES -->
+<section class="bg-[#F9F6F1] py-24 px-4 sm:px-6 lg:px-8 reveal reveal-up">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Volunteer Stories</h2>
+    <p class="text-sm text-gray-600 mb-16 max-w-xl mx-auto">Read what it is like to spend time with our children, written by the volunteers themselves.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left stagger-children">
+      <a href="https://volunteerworknepal.com/2025/01/21/namaste-my-friends/" class="card-lift bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+        <div><i class="fas fa-quote-left text-3xl text-secondary/40 mb-3 block"></i>
+          <p class="text-[15px] text-gray-700 leading-relaxed font-medium italic">Two months living alongside the children, tutoring, cooking and sharing daily life at the home. Read the full story.</p></div>
+        <div class="mt-6 pt-3 border-t border-gray-200/60"><span class="text-sm font-bold text-gray-900">Nikolaus Hielscher</span><span class="block text-xs text-gray-500">Austria · stayed 2 months</span></div>
+      </a>
+      <a href="https://volunteerworknepal.com/2025/01/17/a-heartfelt-expression-of-gratitude/" class="card-lift bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+        <div><i class="fas fa-quote-left text-3xl text-secondary/40 mb-3 block"></i>
+          <p class="text-[15px] text-gray-700 leading-relaxed font-medium italic">A heartfelt expression of gratitude after two months of volunteering with SCIF. Read the full story.</p></div>
+        <div class="mt-6 pt-3 border-t border-gray-200/60"><span class="text-sm font-bold text-gray-900">Rebecca Berettoni</span><span class="block text-xs text-gray-500">Italy · stayed 2 months</span></div>
+      </a>
+      <a href="https://volunteerworknepal.com/2020/05/15/hemali-patel-from-us-one-day-volunteering-on-9-nov-2019/" class="card-lift bg-white rounded-2xl p-8 shadow-sm flex flex-col justify-between">
+        <div><i class="fas fa-quote-left text-3xl text-secondary/40 mb-3 block"></i>
+          <p class="text-[15px] text-gray-700 leading-relaxed font-medium italic">Short on time? A single day with the children can be unforgettable. Read how one-day volunteering went.</p></div>
+        <div class="mt-6 pt-3 border-t border-gray-200/60"><span class="text-sm font-bold text-gray-900">Hemali Patel</span><span class="block text-xs text-gray-500">USA · one-day volunteer</span></div>
+      </a>
+    </div>
+    <a href="https://volunteerworknepal.com/volunteer-testimonials/" class="inline-block mt-10 text-primary font-bold text-sm hover:text-secondary">Read all testimonials →</a>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" class="py-12 md:py-20 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 md:mb-12 text-center reveal reveal-up">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Our <span class="font-serif-italic font-normal text-gray-700">Partners</span></h2>
+    <p class="text-xs md:text-sm text-gray-600 mt-2 md:mt-3 font-medium max-w-2xl mx-auto">Friends and organizations in Nepal and abroad who stand beside our children.</p>
+    <div class="w-8 md:w-10 h-1 bg-[#D97B30] mx-auto mt-4 md:mt-5"></div>
+  </div>
+  <div class="partners-slider-wrapper reveal reveal-up"><div class="partners-track" id="partnersTrack"></div></div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="bg-primary text-white relative overflow-hidden pt-20 pb-8 px-4 sm:px-6 lg:px-8">
+  <div class="absolute -left-16 top-10 w-44 h-44 bg-white/5 rounded-full pointer-events-none float-y"></div>
+  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-white/5 rounded-full pointer-events-none"></div>
+  <div class="absolute -right-20 top-6 w-56 h-56 bg-white/5 rounded-full pointer-events-none float-y" style="animation-delay:1.5s"></div>
+  <div class="max-w-6xl mx-auto text-center relative z-10">
+    <div class="reveal reveal-up">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Help Us Give Every Child <span class="text-secondary ml-1">a Brighter Tomorrow</span></h2>
+      <p class="mt-4 text-sm sm:text-base text-gray-200 leading-relaxed max-w-3xl mx-auto px-2">Whether you donate, sponsor or volunteer, you help 15 children eat well, study hard and dream big. Every dollar helps on food and house expenses.</p>
+    </div>
+    <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4 px-4 stagger-children">
+      <a href="#" class="open-support w-full sm:w-auto bg-secondary text-white text-[15px] font-bold px-7 py-3.5 rounded-2xl flex items-center justify-center space-x-2 shadow-sm hover:scale-[1.04] transition-transform"><i class="fas fa-heart beat"></i><span>Make a Donation</span></a>
+      <a href="#" class="open-volunteer w-full sm:w-auto bg-white text-primary text-[15px] font-bold px-7 py-3.5 rounded-2xl flex items-center justify-center space-x-2 shadow-sm hover:scale-[1.04] transition-transform"><i class="fas fa-hands-helping"></i><span>Volunteer With Us</span></a>
+      <a href="https://volunteerworknepal.com/2026/03/29/introduction/" class="w-full sm:w-auto border border-white/40 text-white text-[15px] font-bold px-7 py-3.5 rounded-2xl flex items-center justify-center space-x-2 hover:bg-white/10 transition-colors"><i class="fas fa-book-open"></i><span>Learn More</span></a>
+    </div>
+    <div class="mt-20 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-300 font-medium space-y-3 sm:space-y-0 tracking-wide">
+      <div>SCIF Nepal – Kirtipur-06, Chobhar, Kathmandu</div>
+      <a href="tel:+9779861304486" class="flex items-center space-x-1.5 hover:text-white"><i class="fas fa-phone text-secondary"></i><span>+977 9861304486</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="bg-[#732014] text-white py-2 px-4 shadow-sm">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-[10px] md:text-xs gap-1">
+    <span>Supporting Children Initiative Foundation (SCIF) – Kirtipur-06, Chobhar, Kathmandu</span>
+    <span>📞 +977 9861304486</span>
+  </div>
+</div>
+
+<!-- CONNECT + MAP -->
+<section id="contact" class="bg-white pt-12 md:pt-16 pb-8 md:pb-12 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto text-center">
+    <div class="reveal reveal-up">
+      <h2 class="font-['Lora'] text-3xl sm:text-4xl md:text-5xl tracking-wide text-gray-900 font-semibold">MORE WAYS TO CONNECT</h2>
+      <div class="w-8 md:w-10 h-1 bg-[#D97B30] mx-auto mt-3 md:mt-4 mb-8 md:mb-10"></div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 md:gap-6 max-w-3xl mx-auto mb-12 stagger-children">
+      <a href="https://www.facebook.com/scifnepal/" class="flex flex-col items-center group space-y-2"><i class="fab fa-facebook text-2xl md:text-3xl text-black group-hover:text-secondary group-hover:-translate-y-1 transition-all"></i><span class="text-[9px] md:text-[11px] font-bold">FACEBOOK</span></a>
+      <a href="https://www.instagram.com/scif_nepal/" class="flex flex-col items-center group space-y-2"><i class="fab fa-instagram text-2xl md:text-3xl text-black group-hover:text-secondary group-hover:-translate-y-1 transition-all"></i><span class="text-[9px] md:text-[11px] font-bold">INSTAGRAM</span></a>
+      <a href="https://api.whatsapp.com/send?phone=9779861304486" class="flex flex-col items-center group space-y-2"><i class="fab fa-whatsapp text-2xl md:text-3xl text-black group-hover:text-secondary group-hover:-translate-y-1 transition-all"></i><span class="text-[9px] md:text-[11px] font-bold">WHATSAPP</span></a>
+      <a href="mailto:scifmbi.nepal@gmail.com" class="flex flex-col items-center group space-y-2"><i class="fas fa-envelope text-2xl md:text-3xl text-black group-hover:text-secondary group-hover:-translate-y-1 transition-all"></i><span class="text-[9px] md:text-[11px] font-bold">EMAIL</span></a>
+      <a href="https://volunteerworknepal.com/" class="flex flex-col items-center group space-y-2"><i class="fas fa-globe text-2xl md:text-3xl text-black group-hover:text-secondary group-hover:-translate-y-1 transition-all"></i><span class="text-[9px] md:text-[11px] font-bold">WEBSITE</span></a>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 text-left max-w-5xl mx-auto mb-12 items-stretch">
+      <div class="bg-[#F9F6F1] rounded-2xl p-6 md:p-8 reveal reveal-left">
+        <h3 class="font-extrabold text-lg text-gray-900 mb-3">Where to find us</h3>
+        <p class="text-sm text-gray-700 mb-3"><i class="fas fa-location-dot text-secondary w-5"></i>Kirtipur-06, Chobhar, Kathmandu, Nepal</p>
+        <p class="text-sm text-gray-600 mb-4">Coming from Kathmandu town towards Brhaspati and then Dakshin Kali Temple, you will find our house on your way.</p>
+        <p class="text-sm text-gray-700 mb-1"><i class="fas fa-phone text-secondary w-5"></i><a href="tel:+9779861304486" class="hover:text-primary">+977 9861304486</a></p>
+        <p class="text-sm text-gray-700 mb-4"><i class="fas fa-envelope text-secondary w-5"></i><a href="mailto:scifmbi.nepal@gmail.com" class="hover:text-primary">scifmbi.nepal@gmail.com</a></p>
+        <a href="https://www.google.com/maps/place/SCIF+NEPAL/@27.6548492,85.2896434,17z" class="inline-block bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-secondary transition-colors">Open in Google Maps →</a>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-stone-100 min-h-[280px] reveal reveal-right">
+        <iframe title="SCIF Nepal location" src="https://maps.google.com/maps?q=27.6547517,85.2883968&z=16&output=embed" class="w-full h-full min-h-[280px] border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <img src="https://volunteerworknepal.com/wp-content/uploads/2018/06/cropped-logo-website-scif-1-270x270.jpg" alt="SCIF Nepal logo" class="mx-auto h-16 w-16 rounded-full object-cover shadow-md mb-4" loading="lazy" onerror="this.style.display='none'">
+    <p class="font-serif text-[13px] sm:text-[15px] text-gray-600 italic">Providing shelter, food, education, love and care, so every child can become a beacon of light</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-gray-100 pt-10 md:pt-14 pb-6 md:pb-8 px-4 sm:px-6 lg:px-8 text-left">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+      <div><h3 class="font-['Lora'] text-base md:text-lg font-semibold border-b pb-2 mb-3">Our Work</h3><ul class="space-y-2 text-[12px] text-gray-500"><li><a href="https://volunteerworknepal.com/2026/05/08/our-children-home-projects/" class="hover:text-primary">Child Care Home</a></li><li><a href="https://volunteerworknepal.com/2026/05/08/community-project/" class="hover:text-primary">Community Outreach</a></li><li><a href="https://volunteerworknepal.com/category/sponsorship-programs/" class="hover:text-primary">Sponsorship</a></li></ul></div>
+      <div><h3 class="font-['Lora'] text-base md:text-lg font-semibold border-b pb-2 mb-3">About</h3><ul class="space-y-2 text-[12px] text-gray-500"><li><a href="https://volunteerworknepal.com/2026/03/29/introduction/" class="hover:text-primary">Introduction</a></li><li><a href="https://volunteerworknepal.com/our-teams/" class="hover:text-primary">Our Team</a></li><li><a href="#partners" class="hover:text-primary">Partners</a></li></ul></div>
+      <div><h3 class="font-['Lora'] text-base md:text-lg font-semibold border-b pb-2 mb-3">Knowledge Hub</h3><ul class="space-y-2 text-[12px] text-gray-500"><li><a href="https://volunteerworknepal.com/category/blog/" class="hover:text-primary">Blog</a></li><li><a href="#gallery" class="hover:text-primary">Gallery</a></li><li><a href="https://volunteerworknepal.com/volunteer-testimonials/" class="hover:text-primary">Testimonials</a></li></ul></div>
+      <div><h3 class="font-['Lora'] text-base md:text-lg font-semibold border-b pb-2 mb-3">Get Involved</h3><ul class="space-y-2 text-[12px] text-gray-500"><li><a href="https://volunteerworknepal.com/volunteer-application/" class="hover:text-primary">Volunteer Application</a></li><li><a href="#" class="open-support hover:text-primary">Donate</a></li><li><a href="https://volunteerworknepal.com/contact-us/" class="hover:text-primary">Contact</a></li></ul></div>
+    </div>
+    <div class="w-full h-px bg-gray-100 mb-4"></div>
+    <p class="text-[10px] md:text-[12px] text-gray-400 text-center">© 2026 Supporting Children Initiative Foundation (SCIF) Nepal. Office: Kirtipur-06, Chobhar, Kathmandu, Nepal.</p>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-label="Photo viewer">
+  <button id="lbClose" style="top:18px;right:18px" aria-label="Close"><i class="fas fa-xmark"></i></button>
+  <button id="lbPrev" style="left:18px" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+  <button id="lbNext" style="right:18px" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  <img id="lbImg" alt="">
+</div>
+
+<div class="whatsapp-float" id="whatsappFloatBtn" role="button" tabindex="0" aria-label="Enquire via WhatsApp"><i class="fab fa-whatsapp"></i></div>
+
+<!-- Enquiry popup -->
+<div id="whatsappPopup" class="popup-overlay" style="display:none">
+  <div class="popup-modal">
+    <button class="popup-close" data-close aria-label="Close">&times;</button>
+    <h3 class="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">Send an Enquiry</h3>
+    <p class="text-xs md:text-sm text-gray-500 mb-5">Fill out the form and we'll reply on WhatsApp.</p>
+    <form id="whatsappEnquiryForm">
+      <div class="mb-3"><label class="form-label">Full Name *</label><input type="text" class="form-input" id="waName" required></div>
+      <div class="mb-3"><label class="form-label">Phone Number *</label><input type="tel" class="form-input" id="waPhone" required></div>
+      <div class="mb-3"><label class="form-label">Enquiry Type *</label>
+        <select class="form-input" id="waSubject" required><option value="">-- Select --</option><option>Volunteering</option><option>One-Day Visit</option><option>Donation / Sponsorship</option><option>Donating Items</option><option>General Enquiry</option></select></div>
+      <div class="mb-4"><label class="form-label">Your Message *</label><textarea class="form-input" id="waMessage" rows="3" required></textarea></div>
+      <button type="submit" class="btn-submit"><i class="fab fa-whatsapp mr-2"></i> Send via WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<!-- Volunteer popup -->
+<div id="memberPopup" class="popup-overlay" style="display:none">
+  <div class="popup-modal">
+    <button class="popup-close" data-close aria-label="Close">&times;</button>
+    <h3 class="text-xl md:text-2xl font-extrabold text-gray-900 mb-1">Become a Volunteer</h3>
+    <p class="text-xs md:text-sm text-gray-500 mb-4">Visit us, stay with us and get an insight into the children's daily lives.</p>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-5">
+      <h4 class="font-extrabold text-sm text-primary mb-3">🤝 How you can help</h4>
+      <ul class="text-[12px] text-gray-700 space-y-1.5">
+        <li><i class="fas fa-check text-green-600 text-xs w-4"></i>Tutor children and help with school homework</li>
+        <li><i class="fas fa-check text-green-600 text-xs w-4"></i>Cook, play and share a new skill or culture</li>
+        <li><i class="fas fa-check text-green-600 text-xs w-4"></i>One-day visits and long-term stays both welcome</li>
+      </ul>
+    </div>
+    <form id="memberForm">
+      <div class="mb-3"><label class="form-label">Full Name *</label><input type="text" class="form-input" id="memName" required></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+        <div><label class="form-label">Phone / WhatsApp *</label><input type="tel" class="form-input" id="memPhone" required></div>
+        <div><label class="form-label">Email</label><input type="email" class="form-input" id="memEmail"></div>
+      </div>
+      <div class="mb-3"><label class="form-label">Country *</label><input type="text" class="form-input" id="memCountry" required></div>
+      <div class="mb-3"><label class="form-label">Volunteering Type *</label>
+        <select class="form-input" id="memType" required><option value="">-- Select --</option><option>One-Day Volunteer</option><option>Short Stay (1–4 weeks)</option><option>Long Stay (1+ months)</option></select></div>
+      <div class="mb-4"><label class="form-label">Tell us about yourself *</label><textarea class="form-input" id="memReason" rows="2" required></textarea></div>
+      <button type="submit" class="btn-submit"><i class="fab fa-whatsapp mr-2"></i> Send Volunteer Application</button>
+    </form>
+  </div>
+</div>
+
+<!-- Donate popup -->
+<div id="supportPopup" class="popup-overlay" style="display:none">
+  <div class="popup-modal">
+    <button class="popup-close" data-close aria-label="Close">&times;</button>
+    <div class="text-center mb-5">
+      <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3"><i class="fas fa-hands-helping text-primary text-2xl"></i></div>
+      <h3 class="text-xl md:text-2xl font-extrabold text-gray-900">Support SCIF Nepal</h3>
+      <p class="text-xs md:text-sm text-gray-500 mt-1">Every dollar helps with food and house expenses for our children.</p>
+    </div>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-4 mb-4 text-[12px] text-gray-700 space-y-1">
+      <h4 class="font-extrabold text-sm text-primary mb-2">🏦 Bank transfer details</h4>
+      <p><b>Account name:</b> Supporting Children Initiative Foundation M.B.I. Nepal</p>
+      <p><b>Account number:</b> <span id="acctNo">2990154577000014</span> <button type="button" id="copyAcct" class="ml-1 text-primary font-bold underline">Copy</button></p>
+      <p><b>Bank:</b> Prabhu Bank Limited</p>
+      <p><b>Branch:</b> Kirtipur-06, Chobhar Branch, Kathmandu, Nepal</p>
+      <p><b>Swift code:</b> PRVUNPKA</p>
+    </div>
+    <div class="text-center bg-stone-50 border border-stone-200 rounded-xl p-4 mb-4" id="qrBox">
+      <h4 class="font-extrabold text-sm text-primary mb-2">📱 Scan to donate via Fonepay</h4>
+      <a href="https://volunteerworknepal.com/wp-content/uploads/2026/07/1000131776.jpg" target="_blank" rel="noopener"><img src="https://volunteerworknepal.com/wp-content/uploads/2026/07/1000131776.jpg" alt="Fonepay QR code for SCIF Nepal" loading="lazy" class="mx-auto max-h-56 rounded-lg" onerror="document.getElementById('qrBox').style.display='none'"></a>
+      <p class="text-[11px] text-gray-500 mt-2">Tap the QR code to open it full size.</p>
+    </div>
+    <div class="space-y-3 mb-5">
+      <a href="https://volunteerworknepal.com/2018/08/24/sponsor-monthly-house-rental/" class="support-option"><div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-house text-green-600"></i></div><div><p class="font-bold text-sm text-stone-800">Sponsor the House Rent</p><p class="text-xs text-gray-500">Help keep a stable roof over the children's heads.</p></div></a>
+      <a href="https://volunteerworknepal.com/2018/08/22/sponsor-orphan-medical-fees/" class="support-option"><div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-briefcase-medical text-amber-600"></i></div><div><p class="font-bold text-sm text-stone-800">Sponsor Medical Fees</p><p class="text-xs text-gray-500">Cover check-ups and treatment for our children.</p></div></a>
+      <a href="#" id="supportVolLink" class="support-option"><div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-hands text-blue-600"></i></div><div><p class="font-bold text-sm text-stone-800">Volunteer Your Time</p><p class="text-xs text-gray-500">Tutor, cook, teach a skill or simply share love.</p></div></a>
+      <a href="https://api.whatsapp.com/send?phone=9779861304486&text=I%20would%20like%20to%20donate%20items%20to%20SCIF%20Nepal" target="_blank" rel="noopener" class="support-option"><div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center shrink-0"><i class="fas fa-box-open text-red-500"></i></div><div><p class="font-bold text-sm text-stone-800">Donate Items</p><p class="text-xs text-gray-500">Stationery, rice, cooking oil, fruits, warm clothes and more.</p></div></a>
+    </div>
+    <div class="bg-stone-50 rounded-xl p-4 text-center">
+      <a href="mailto:scifmbi.nepal@gmail.com" class="text-primary font-bold text-sm hover:text-secondary">📧 scifmbi.nepal@gmail.com</a>
+      <span class="mx-2 text-gray-300">|</span>
+      <a href="tel:+9779861304486" class="text-primary font-bold text-sm hover:text-secondary">📞 +977 9861304486</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const WA = '9779861304486';
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* ---------- Partners with logos (favicon service, falls back to initial) ---------- */
+  const fav = d => `https://www.google.com/s2/favicons?domain=${d}&sz=128`;
+  const partners = [
+    ['KriyaiD','Partner','#732014','https://kriyaidsg.com/',fav('kriyaidsg.com')],
+    ['SOS Tibet, India, Nepal Onlus','Partner','#004163','https://www.sostibet.it/',fav('sostibet.it')],
+    ['Distressed Children & Infants Int\'l','Partner','#D97B30','https://distressedchildren.org/',fav('distressedchildren.org')],
+    ['Gouttes d\'o Solidaires','Partner','#2f6f4f','https://www.gouttesdosolidaires.org/',fav('gouttesdosolidaires.org')],
+    ['Eyes On Nepal','Tour Operator','#54160E','https://www.eyesonnepal.com/',fav('eyesonnepal.com')],
+    ['Rotaract Club of Pulchok','Club','#BF3F26','#',null],
+    ['People\'s Dental College','Health Partner','#5a4a8a','#',null]
+  ];
+  // To use your own logo files, replace the last value with e.g. 'assets/partnerlogo/kriyaid.png'
+  const card = ([n,t,c,u,logo]) => {
+    const initial = `<div class="partner-icon" style="background:${c}">${n[0]}</div>`;
+    const media = logo ? `<img src="${logo}" alt="${n} logo" class="partner-logo" loading="lazy" onerror="this.outerHTML=this.dataset.fb" data-fb='${initial}'>` : initial;
+    return `<a href="${u}" ${u!=='#'?'target="_blank" rel="noopener"':''} class="partner-logo-card" title="${n}">${media}<span class="partner-name">${n}</span><span class="partner-type">${t}</span></a>`;
+  };
+  $('#partnersTrack').innerHTML = [...partners, ...partners].map(card).join('');
+
+  /* ---------- Hero slideshow ---------- */
+  const slides = $$('.hero-slide'), dotsBox = $('#heroDots'); let hi = 0, ht;
+  slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'hero-dot' + (i ? '' : ' active'); b.setAttribute('aria-label', 'Slide ' + (i + 1)); b.onclick = () => { go(i); }; dotsBox.appendChild(b); });
+  const dots = $$('.hero-dot');
+  function go(i) {
+    slides[hi].classList.remove('active'); dots[hi].classList.remove('active');
+    hi = (i + slides.length) % slides.length;
+    void slides[hi].offsetWidth; slides[hi].classList.add('active'); dots[hi].classList.add('active');
+    clearInterval(ht); ht = setInterval(() => go(hi + 1), 5500);
+  }
+  ht = setInterval(() => go(hi + 1), 5500);
+
+  /* ---------- Mega menu (hover + click + keyboard) ---------- */
+  const groups = $$('.mega-nav-group'); let openGroup = null, closeTimer = null, hoverAt = 0;
+  const panelOf = g => g.querySelector('.mega-panel'), btnOf = g => g.querySelector('.mega-trigger');
+  const setTops = () => { const h = $('#siteHeader').getBoundingClientRect().bottom; $$('.mega-panel').forEach(p => p.style.top = h + 'px'); };
+  function closeMega() { groups.forEach(g => { panelOf(g).classList.remove('active-panel'); btnOf(g).setAttribute('aria-expanded', 'false'); }); openGroup = null; }
+  function openMega(g) { setTops(); closeDonate(); groups.forEach(x => { if (x !== g) { panelOf(x).classList.remove('active-panel'); btnOf(x).setAttribute('aria-expanded', 'false'); } }); panelOf(g).classList.add('active-panel'); btnOf(g).setAttribute('aria-expanded', 'true'); openGroup = g; }
+  groups.forEach(g => {
+    const b = btnOf(g);
+    g.addEventListener('mouseenter', () => { clearTimeout(closeTimer); if (openGroup !== g) { hoverAt = Date.now(); openMega(g); } });
+    g.addEventListener('mouseleave', () => { closeTimer = setTimeout(closeMega, 220); });
+    b.addEventListener('click', e => { e.stopPropagation(); if (openGroup === g && Date.now() - hoverAt > 400) closeMega(); else if (openGroup !== g) openMega(g); });
+    b.addEventListener('keydown', e => { if (e.key === 'ArrowDown') { e.preventDefault(); openMega(g); panelOf(g).querySelector('a')?.focus(); } });
+    panelOf(g).addEventListener('click', e => { e.stopPropagation(); if (e.target.closest('a')) closeMega(); });
+  });
+  addEventListener('resize', setTops);
+
+  /* ---------- Donate dropdown ---------- */
+  const dBtn = $('#donateDropBtn'), dMenu = $('#donateMenu');
+  function closeDonate() { dMenu.classList.remove('open'); dBtn.setAttribute('aria-expanded', 'false'); }
+  dBtn.addEventListener('click', e => { e.stopPropagation(); closeMega(); const o = dMenu.classList.toggle('open'); dBtn.setAttribute('aria-expanded', o); });
+  dMenu.addEventListener('click', e => { e.stopPropagation(); if (e.target.closest('a')) closeDonate(); });
+  document.addEventListener('click', () => { closeMega(); closeDonate(); });
+
+  /* ---------- Mobile drawer ---------- */
+  const mb = $('#mobile-menu-btn'), md = $('#mobile-drawer');
+  mb.addEventListener('click', () => { const o = md.classList.toggle('open'); mb.setAttribute('aria-expanded', o); });
+  $$('.mobile-nav-item').forEach(i => i.querySelector('.mobile-nav-header').addEventListener('click', () => {
+    i.querySelector('.mobile-submenu').classList.toggle('open');
+    i.querySelector('.mobile-submenu-icon').classList.toggle('rotated');
+  }));
+  $$('#mobile-drawer a[href^="#"]:not(.open-support):not(.open-volunteer)').forEach(a => a.addEventListener('click', () => md.classList.remove('open')));
+
+  /* ---------- Themes slider ---------- */
+  const st = $('#sliderTrack'); let idx = 0, auto;
+  const vis = () => innerWidth >= 1024 ? 4 : innerWidth >= 640 ? 2 : 1;
+  const move = () => { const w = st.children[0].offsetWidth, g = innerWidth >= 768 ? 24 : 16; st.style.transform = `translateX(-${idx * (w + g)}px)`; };
+  const next = () => { const m = st.children.length - vis(); idx = idx >= m ? 0 : idx + 1; move(); };
+  const prev = () => { const m = st.children.length - vis(); idx = idx <= 0 ? m : idx - 1; move(); };
+  const reset = () => { clearInterval(auto); auto = setInterval(next, 3200); };
+  $('#nextSlide').addEventListener('click', () => { next(); reset(); });
+  $('#prevSlide').addEventListener('click', () => { prev(); reset(); });
+  const sw = $('#sliderWrap'); sw.addEventListener('mouseenter', () => clearInterval(auto)); sw.addEventListener('mouseleave', reset);
+  let tx = 0; st.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+  st.addEventListener('touchend', e => { const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 40) { d < 0 ? next() : prev(); reset(); } });
+  addEventListener('resize', move); reset();
+
+  /* ---------- Popups ---------- */
+  const waP = $('#whatsappPopup'), volP = $('#memberPopup'), supP = $('#supportPopup'), all = [waP, volP, supP];
+  const show = p => { all.forEach(x => x.style.display = 'none'); p.style.display = 'flex'; closeMega(); closeDonate(); md.classList.remove('open'); };
+  const hide = () => all.forEach(x => x.style.display = 'none');
+  $('#whatsappFloatBtn').addEventListener('click', () => show(waP));
+  $$('.open-volunteer').forEach(b => b.addEventListener('click', e => { e.preventDefault(); show(volP); }));
+  $$('.open-support').forEach(b => b.addEventListener('click', e => { e.preventDefault(); show(supP); }));
+  $('#supportVolLink').addEventListener('click', e => { e.preventDefault(); show(volP); });
+  all.forEach(p => { p.addEventListener('click', e => { if (e.target === p) hide(); }); $('[data-close]', p).addEventListener('click', hide); });
+  $('#copyAcct').addEventListener('click', e => { navigator.clipboard?.writeText($('#acctNo').textContent); e.target.textContent = 'Copied'; });
+  const send = txt => open(`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`, '_blank');
+  $('#whatsappEnquiryForm').addEventListener('submit', e => { e.preventDefault();
+    send(`*New Enquiry - SCIF Nepal*\n\n*Name:* ${$('#waName').value}\n*Phone:* ${$('#waPhone').value}\n*Subject:* ${$('#waSubject').value}\n*Message:* ${$('#waMessage').value}`);
+    hide(); e.target.reset(); });
+  $('#memberForm').addEventListener('submit', e => { e.preventDefault();
+    const em = $('#memEmail').value;
+    send(`*Volunteer Application - SCIF Nepal*\n\n*Name:* ${$('#memName').value}\n*Phone:* ${$('#memPhone').value}\n${em ? '*Email:* ' + em + '\n' : ''}*Country:* ${$('#memCountry').value}\n*Type:* ${$('#memType').value}\n*About:* ${$('#memReason').value}`);
+    hide(); e.target.reset(); });
+
+  /* ---------- Lightbox ---------- */
+  const lb = $('#lightbox'), lbImg = $('#lbImg'), gItems = $$('#galleryGrid img'); let li = 0;
+  const showLb = i => { li = (i + gItems.length) % gItems.length; lbImg.src = gItems[li].src; lb.classList.add('open'); };
+  gItems.forEach((im, i) => im.parentElement.addEventListener('click', () => showLb(i)));
+  $('#lbClose').onclick = () => lb.classList.remove('open');
+  $('#lbPrev').onclick = e => { e.stopPropagation(); showLb(li - 1); };
+  $('#lbNext').onclick = e => { e.stopPropagation(); showLb(li + 1); };
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+
+  /* ---------- Keys ---------- */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { hide(); closeMega(); closeDonate(); lb.classList.remove('open'); }
+    if (lb.classList.contains('open')) { if (e.key === 'ArrowRight') showLb(li + 1); if (e.key === 'ArrowLeft') showLb(li - 1); }
+  });
+
+  /* ---------- Scroll reveal (with stagger index + safety net) ---------- */
+  $$('.stagger-children').forEach(c => [...c.children].forEach((ch, i) => ch.style.setProperty('--i', i)));
+  const reveal = el => {
+    el.classList.add('visible');
+    if (el.classList.contains('stagger-children')) setTimeout(() => el.classList.add('done'), 700 + el.children.length * 90 + 300);
+  };
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { reveal(en.target); io.unobserve(en.target); } }), { threshold: .08, rootMargin: '0px 0px -40px 0px' });
+  const targets = $$('.reveal, .stagger-children'); targets.forEach(el => io.observe(el));
+  setTimeout(() => targets.forEach(el => { if (!el.classList.contains('visible') && el.getBoundingClientRect().top < innerHeight) reveal(el); }), 1200);
+
+  /* ---------- Counters ---------- */
+  const animate = el => {
+    const t = +el.dataset.target, s = performance.now();
+    const f = n => { const p = Math.min((n - s) / 1800, 1); el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * t); p < 1 ? requestAnimationFrame(f) : el.textContent = t; };
+    requestAnimationFrame(f);
+  };
+  const co = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { animate(en.target); co.unobserve(en.target); } }), { threshold: .4 });
+  $$('.counter-value').forEach(el => co.observe(el));
+
+  /* ---------- Scroll progress + header shadow ---------- */
+  const bar = $('#progress'), hdr = $('#siteHeader');
+  const onScroll = () => { const h = document.documentElement.scrollHeight - innerHeight; bar.style.width = (h > 0 ? scrollY / h * 100 : 0) + '%'; hdr.classList.toggle('scrolled', scrollY > 10); };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+});
+</script>
+
+<!-- Google Translate (EN / Nepali) -->
+<script>
+(function(){
+  function setLanguage(lang, reload){
+    const tgt = lang === 'ne' ? 'ne' : 'en';
+    document.documentElement.lang = tgt;
+    try { localStorage.setItem('lang', lang); } catch(e){}
+    const v = '/auto/' + tgt, exp = new Date(Date.now() + 365*864e5).toUTCString();
+    document.cookie = 'googtrans=' + v + '; expires=' + exp + '; path=/';
+    document.cookie = 'googtrans=' + v + '; expires=' + exp + '; path=/; domain=' + location.hostname;
+    if (reload) location.reload();
+  }
+  window.googleTranslateElementInit = function(){
+    new google.translate.TranslateElement({ pageLanguage:'en', includedLanguages:'en,ne', autoDisplay:false }, 'google_translate_element');
+    let saved = 'en'; try { saved = localStorage.getItem('lang') || 'en'; } catch(e){}
+    setLanguage(saved, false);
+    document.getElementById('langEnBtn').classList.toggle('active', saved === 'en');
+    document.getElementById('langNeBtn').classList.toggle('active', saved === 'ne');
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('langEnBtn').addEventListener('click', () => setLanguage('en', true));
+    document.getElementById('langNeBtn').addEventListener('click', () => setLanguage('ne', true));
+  });
+  const s = document.createElement('script');
+  s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+  s.defer = true; document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
